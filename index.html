@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posting Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <nav>
+      <div class="nav-inner">
+        <span class="nav-logo">📝 PostingPage</span>
+      </div>
+    </nav>
+
+    <main>
+      <section class="form-section" aria-label="Criar post">
+        <div class="card">
+          <h1 class="card-title">Criar Post</h1>
+
+          <form id="post-form" novalidate>
+            <div class="field-group">
+              <label for="titulo">Título</label>
+              <input
+                type="text"
+                id="titulo"
+                name="titulo"
+                placeholder="Dê um título ao seu post..."
+                autocomplete="off"
+                required
+                aria-required="true"
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="conteudo">Conteúdo</label>
+              <textarea
+                id="conteudo"
+                name="conteudo"
+                placeholder="Escreva o que você está pensando..."
+                rows="5"
+                required
+                aria-required="true"
+              ></textarea>
+            </div>
+
+            <button type="submit" id="btn-postar" aria-label="Publicar post">
+              Publicar
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section class="feed-section" aria-label="Feed de posts" id="feed-section">
+        <h2 class="feed-heading">Feed</h2>
+
+        <div id="empty-state" class="empty-state">
+          <p>Nenhum post publicado ainda. Seja o primeiro!</p>
+        </div>
+
+        <article id="post-card" class="post-card hidden" aria-live="polite">
+          <div class="post-card-header">
+            <div class="avatar" aria-hidden="true">U</div>
+            <div class="post-meta">
+              <span class="post-author">Usuário</span>
+              <span class="post-time" id="post-time"></span>
+            </div>
+          </div>
+          <div class="post-card-body">
+            <h2 id="renderizador-titulo" class="post-titulo"></h2>
+            <p id="renderizador-conteudo" class="post-conteudo"></p>
+          </div>
+          <div class="post-card-footer">
+            <span id="post-id-label" class="post-id-label"></span>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>PostingPage &copy; 2026 &mdash; Simulando o mundo real com a JSONPlaceholder API</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
